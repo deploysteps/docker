@@ -1,6 +1,10 @@
 {
   "name": "@deploysteps/docker",
   "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.0",
   "description": "A set of tasks for Docker.",
   "main": "lib/index.js",
