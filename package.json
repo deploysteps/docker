@@ -27,6 +27,6 @@
     "typescript": "^5.7.3"
   },
   "peerDependencies": {
-    "@deploysteps/core": "^1.16.0"
+    "@deploysteps/core": ">=1.16.0"
   }
 }
