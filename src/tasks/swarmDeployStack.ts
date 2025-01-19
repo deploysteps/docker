@@ -1,11 +1,11 @@
 import path from 'path';
-import { createFile } from "@deploysteps/core";
+import { Connection, createFile } from "@deploysteps/core";
 
 type EnvMap = {
   [key: string]: string;
 }
 
-export const swarmDeployStack = async (connection, stackFile: string, name: string, env: EnvMap) => {
+export const swarmDeployStack = async (connection: Connection, stackFile: string, name: string, env: EnvMap) => {
   const folder = path.dirname(stackFile);
   const file = path.basename(stackFile);
 
@@ -20,7 +20,8 @@ export const swarmDeployStack = async (connection, stackFile: string, name: stri
       envFilePath,
       Object.keys(env).map(key =>
         `export ${key}="${env[key]}"`
-      ).join('\n')
+      ).join('\n'),
+      {}
     );
 
     // Deploy stack with env file

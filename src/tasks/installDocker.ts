@@ -1,4 +1,6 @@
-export const installDocker = async (connection) => {
+import { Connection } from "@deploysteps/core";
+
+export const installDocker = async (connection: Connection) => {
   const dockerInstalled = await connection.script('which docker')
     .then(() => true)
     .catch(() => false);

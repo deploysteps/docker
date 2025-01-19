@@ -1,4 +1,6 @@
-export const swarmCreateNetwork = async (connection, name: string) => {
+import { Connection } from "@deploysteps/core";
+
+export const swarmCreateNetwork = async (connection: Connection, name: string) => {
   const networkExists = await connection.exec(`docker network inspect ${name} > /dev/null 2>&1`)
     .then(() => true)
     .catch(() => false)
